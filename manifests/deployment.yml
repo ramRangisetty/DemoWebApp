@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: ramrangisettydemowebapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ramrangisettydemowebapp
+  template:
+    metadata:
+      labels:
+        app: ramrangisettydemowebapp 
+    spec:
+      containers:
+        - name: ramrangisettydemowebapp 
+          image: demoregistryca.azurecr.io/ramrangisettydemowebapp
+          ports:
+          - containerPort: 80
