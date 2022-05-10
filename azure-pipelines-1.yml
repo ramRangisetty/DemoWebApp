@@ -37,3 +37,9 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+    - task: CopyPublishBuildArtifacts@1
+      inputs:
+        CopyRoot: '$(Build.SourcesDirectory)'
+        Contents: '**\*'
+        ArtifactName: 'drop'
+        ArtifactType: 'Container'
