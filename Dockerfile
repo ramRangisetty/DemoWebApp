@@ -1,4 +1,4 @@
 ﻿#generate runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:5.0
-COPY /app/out .
+COPY /bin/Release/net5.0/publish .
 ENTRYPOINT [ "dotnet", "DemoWebApp.dll" ]
